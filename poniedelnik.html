@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Понедельник — Наблюдатель</title>
+  <link rel="stylesheet" href="styleponiedelnik.css">
+  <link rel="stylesheet" href="./print.css">
+  <link rel="stylesheet" href="./modal.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="day-header">
+      <div class="day-title">🌿 Понедельник — Наблюдатель</div>
+
+      <div class="day-subtitle">
+        Сегодня ты исследователь 👀☘️🦆 <br>Найди что-то новое!🔎
+      </div>
+    </div>
+    <div class="flex">
+      <button class="print-btn" onclick="window.print()">
+      🖨️ Распечатать
+    </button>
+    <button class="print-btn" onclick="printClean()">
+      🧾 PDF версия
+    </button>
+    </div>
+    <!--  -->
+    <div style="text-align:center; margin-bottom:10px;">
+      Имя: ____________ Дата: ____________
+    </div>
+
+    <!-- Блоки -->
+
+    <div class="card morning" data-id="morning">
+      <div class="icon">☀️</div>
+      <div class="text">
+        <span class="time-badge">7:00</span>
+        Подъём и старт дня
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card games" data-id="games">
+      <div class="icon">🎮</div>
+      <div class="text">
+        <span class="time-badge">7:00 - 9:00</span>
+        Гаджеты — играй, но ты управляешь временем ⏳
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card school" data-id="school">
+      <div class="icon">🏫</div>
+      <div class="text">
+        <span class="time-badge">9:00–13:00</span>
+        Школа — каждый урок это новый уровень 🎯
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card food" data-id="food">
+      <div class="icon">🍎</div>
+      <div class="text">
+        <span class="time-badge">13:00–14:00</span>
+        Обед и отдых
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card games" data-id="games">
+      <div class="icon">🎮</div>
+      <div class="text">
+        <span class="time-badge">14:00–16:00</span>
+        Гаджеты — играй, но ты управляешь временем ⏳
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card walk" data-id="walk">
+      <div class="icon">🌳</div>
+      <div class="text">
+        <span class="time-badge">16:00–17:00</span>
+        Прогулка — найди 3 интересные вещи 👀
+        <a href="https://docs.google.com/document/d/15UURuPdmItHn8BFRFwMsOrN81gnWZpjk/edit?usp=sharing&ouid=112455013012112497035&rtpof=true&sd=true" target="_blank">Документ с заданием</a>
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card study" data-id="study">
+      <div class="icon">🔍</div>
+      <div class="text">
+        <span class="time-badge">17:00–18:00</span>
+        Дневник наблюдений — запиши, что интересного увидел сегодня
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card food" data-id="food">
+      <div class="icon">🍽️</div>
+      <div class="text">
+        <span class="time-badge">18:00–19:00</span>
+        Ужин и отдых
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card good" data-id="good">
+      <div class="icon">❤️</div>
+      <div class="text">
+        <span class="time-badge">19:00–19:30</span>
+        1 доброе дело — ты делаешь мир лучше
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card lesson" data-id="lesson">
+      <div class="icon">📚</div>
+      <div class="text">
+        <span class="time-badge">19:30–20:00</span>
+        Уроки — 30 минут и ты свободен 🚀
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card video" data-id="video">
+      <div class="icon">🎬</div>
+      <div class="text">
+        <span class="time-badge">20:00–21:00</span>
+        Видео или мультик — узнай что-то новое
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <div class="card evning" data-id="evning">
+      <div class="icon">🌙</div>
+      <div class="text">
+        <span class="time-badge">21:00–22:00</span>
+        Спокойный вечер и сон
+      </div>
+      <div class="check">
+        <input type="checkbox">
+      </div>
+    </div>
+    <div class="motivation">
+      <h2>Моя дневник за день:</h2>
+      <h4>ЗАЧЕМ ДНЕВНИК</h4>
+      <div>
+        <p><b>Это твой способ понять:</b></p>
+        <ul>
+          <li>что у тебя получается</li>
+          <li>что тебе нравится</li>
+          <li>как становиться лучше</li>
+        </ul>
+      </div>
+      <h3>✍️ Каждый день — 3 минуты</h3>
+      
+      <a href="./dniewnik.html" target="_blank">Открыть дневник</a>
+    </div>
+
+    <!-- Мотивация -->
+
+    <div class="motivation">
+      <h3>🚀 Ты сегодня:</h3>
+
+      <p>🧠 развиваешь мозг</p>
+      <p>👀 учишься замечать детали</p>
+      <p>🌍 узнаёшь мир</p>
+      <p>💪 становишься лучше, чем вчера</p>
+    </div>
+    <div class="cell">
+      <h2>Помни!</h2>
+      <p class="p22">Успешные люди - это те, кто каждый день работает над собой! <br>Не ленись - ты можешь больше, чем думаешь! 🏆</p>
+    </div>
+    <!--  -->
+    <a href="index.html" class="back">⬅ Назад к неделе</a>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-text"></p>
+      <p id="modal-text2"></p>
+      <p id="modal-text3"></p>
+    </div>
+  </div>
+
+
+  <script src="./print.js"></script>
+  <script src="./modal.js"></script>
+</body>
+
+</html>

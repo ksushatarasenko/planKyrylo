@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Вторник — Сила</title>
+  <link rel="stylesheet" href="styleponiedelnik.css">
+  <link rel="stylesheet" href="./print.css">
+  <link rel="stylesheet" href="./modal.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="day-header">
+    <div class="day-title">💪 Вторник — Сила и дисциплина</div>
+
+    <div class="day-subtitle">
+      Сегодня ты прокачиваешь тело и характер 🔥<br>
+      Стань сильнее, чем вчера!
+    </div>
+  </div>
+
+  <div class="flex">
+    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
+  </div>
+
+  <div style="text-align:center; margin-bottom:10px;">
+    Имя: ____________ Дата: ____________
+  </div>
+
+  <!-- День -->
+
+  <div class="card morning" data-id="morning">
+    <div class="icon">☀️</div>
+    <div class="text">
+      <span class="time-badge">6:30</span>
+      Подъём, зарядка, завтрак
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card school" data-id="school">
+    <div class="icon">🏫</div>
+    <div class="text">
+      <span class="time-badge">8:00–13:00</span>
+      Школа — тренируй внимание и мышление 🧠
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card food" data-id="food">
+    <div class="icon">🍎</div>
+    <div class="text">
+      <span class="time-badge">13:00–14:00</span>
+      Обед и отдых
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card games" data-id="games">
+    <div class="icon">🎮</div>
+    <div class="text">
+      <span class="time-badge">14:00–17:00</span>
+      Гаджеты — контролируй время ⏳
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card sport" data-id="sport">
+    <div class="icon">🥋</div>
+    <div class="text">
+      <span class="time-badge">17:00–18:30</span>
+      Карате — тренировка силы и духа
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card sportDom" data-id="sportDom">
+    <div class="icon">💪</div>
+    <div class="text">
+      <span class="time-badge">18:30–19:00</span>
+      Лёгкая растяжка / упражнения дома
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card foodEvning" data-id="foodEvning">
+    <div class="icon">🍽️</div>
+    <div class="text">
+      <span class="time-badge">19:00–19:30</span>
+      Ужин и отдых
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card lesson" data-id="lesson">
+    <div class="icon">📚</div>
+    <div class="text">
+      <span class="time-badge">19:30–20:00</span>
+      Уроки — быстро и сосредоточенно 🚀
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card video" data-id="video">
+    <div class="icon">🎬</div>
+    <div class="text">
+      <span class="time-badge">20:00–21:00</span>
+      Видео / мультик (лучше про спорт или силу)
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card evning" data-id="evning">
+    <div class="icon">🌙</div>
+    <div class="text">
+      <span class="time-badge">21:00–22:00</span>
+      Спокойный вечер и сон
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <!-- Дневник -->
+
+  <div class="motivation">
+    <h2>📓 Мой дневник за день:</h2>
+
+    <p><b>Это твой способ понять:</b></p>
+    <ul>
+      <li>что у тебя получается</li>
+      <li>что тебе нравится</li>
+      <li>как становиться лучше</li>
+    </ul>
+
+    <a href="./dniewnik.html" target="_blank">Открыть дневник</a>
+  </div>
+
+  <!-- Мотивация -->
+
+  <div class="motivation">
+    <h3>🔥 Сегодня ты:</h3>
+
+    <p>💪 тренируешь тело</p>
+    <p>🧠 развиваешь силу воли</p>
+    <p>🎯 учишься дисциплине</p>
+    <p>🚀 становишься сильнее каждый день</p>
+  </div>
+
+  <div class="cell">
+    <h2>Помни!</h2>
+    <p class="p22">
+      Сильные люди — это те, кто не сдаются! 💥<br>
+      Ты можешь больше, чем думаешь!
+    </p>
+  </div>
+
+  <a href="index.html" class="back">⬅ Назад к неделе</a>
+
+</div>
+
+<!-- МОДАЛКА -->
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+    <p id="modal-text2"></p>
+    <p id="modal-text3"></p>
+  </div>
+</div>
+
+<script src="./print.js"></script>
+<script src="./modalTuesday.js"></script>
+
+</body>
+</html>

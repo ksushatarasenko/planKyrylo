@@ -1,0 +1,51 @@
+@media print {
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+
+  .motivation {
+    page-break-inside: avoid;
+  }
+
+}
+
+.print-btn {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  background: #43a047;
+}
+
+/* при печати кнопку скрываем */
+@media print {
+  .print-btn {
+    display: none;
+  }
+}
+
+.print-mode .card {
+  border: 1px solid #aaa;
+}
+
+.print-mode .day-subtitle {
+  border: 1px solid #aaa;
+}

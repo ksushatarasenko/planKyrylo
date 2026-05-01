@@ -1,0 +1,61 @@
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 22px;
+      
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      font-size: 22px;
+      color: #680909;
+    }
+
+    .emoji {
+      font-size: 40px;
+    }
+
+    /* Цвета дней */
+    .monday { background: #e3f2fd; }
+    .tuesday { background: #e8f5e9; }
+    .wednesday { background: #fff3e0; }
+    .thursday { background: #fce4ec; }
+    .friday { background: #e0f7fa; }
+    .saturday { background: #fff8e1; }
+    .sunday { background: #f3e5f5; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
