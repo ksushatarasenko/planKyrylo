@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Мой дневник дня</title>
+<title>Дневник приключений</title>
 <link rel="stylesheet" href="./print.css">
+
 <style>
 
 @page {
@@ -56,12 +57,13 @@ h1 {
   margin-bottom: 6px;
 }
 
-.small {
-  height: 40px;
+.big {
+  height: 90px;
 }
 
-.big {
-  height: 80px;
+.draw-area {
+  height: 120px;
+  border: 1px dashed #aaa;
 }
 
 .footer {
@@ -77,79 +79,92 @@ h1 {
 <body>
 
 <div class="container">
-    <button class="print-btn" onclick="window.print()">
-      🖨️ Распечатать
-    </button>
 
-  <h1>📓 Мой дневник за день</h1>
+  <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+
+  <h1>🌍 Дневник приключений</h1>
 
   <div class="header">
     Имя: <span class="line"></span>  
     Дата: <span class="line"></span>
   </div>
 
-  <!-- Блоки -->
+  <!-- Главное открытие -->
 
   <div class="block">
-    <div class="title">😊 Что сегодня понравилось</div>
+    <div class="title">🔍 Моё главное открытие</div>
+    <div class="write-area big"></div>
+  </div>
+
+  <!-- Что нашёл -->
+
+  <div class="block">
+    <div class="title">👀 Что я сегодня заметил (3–5 вещей)</div>
+    <div class="write-area"></div>
     <div class="write-area"></div>
     <div class="write-area"></div>
   </div>
 
+  <!-- Что это -->
+
   <div class="block">
-    <div class="title">💪 Что получилось лучше всего</div>
+    <div class="title">🧠 Что это такое (попробуй объяснить)</div>
     <div class="write-area"></div>
   </div>
 
+  <!-- Что удивило -->
+
   <div class="block">
-    <div class="title">🤔 Что было сложно</div>
+    <div class="title">😮 Что меня удивило</div>
     <div class="write-area"></div>
   </div>
 
+  <!-- Новый вопрос -->
+
   <div class="block">
-    <div class="title">🌱 Что нового узнал</div>
+    <div class="title">❓ Какой вопрос у меня появился</div>
     <div class="write-area"></div>
   </div>
 
+  <!-- Где узнать -->
+
   <div class="block">
-    <div class="title">🎯 Что сделаю лучше завтра</div>
+    <div class="title">📚 Где я могу узнать больше</div>
     <div class="write-area"></div>
   </div>
 
-  
+  <!-- Рисунок -->
+
+  <div class="block">
+    <div class="title">✏️ Нарисуй или приклей фото</div>
+    <div class="draw-area"></div>
+  </div>
 
   <!-- Вывод -->
 
   <div class="footer">
-    <b>🏆 Мой вывод за день:</b>
+    <b>🚀 Мой вывод:</b>
     <div class="write-area big"></div>
   </div>
-  <!-- Диаграмма -->
-  <br><br><br><br><br>
-  <div class="block">
-    <div class="title">📊 Мой день (закрась круг)</div>
-    <div style="text-align:center; margin: 10px 0;">
-      <div style="
-        width: 180px;
-        height: 180px;
-        border: 2px solid #000;
-        border-radius: 50%;
-        margin: auto;
-      "></div>
-    </div>
 
-    <div>
-      😴 Сон &nbsp;&nbsp; 🏫 Школа &nbsp;&nbsp; 🎮 Гаджеты  
-      <br>
-      📚 Развитие &nbsp;&nbsp; ❤️ Полезное
-    </div>
+  <!-- Мотивация -->
+
+  <div class="footer">
+    <b>🌟 Помни:</b><br><br>
+    Мир полон интересного!<br>
+    Кто задаёт вопросы — тот становится умнее.<br>
+    Ты настоящий исследователь!
   </div>
 
-   <div class="back">
-    <a href="index.html" class="back">⬅ Назад к неделе</a><br>
-   </div>
+  <br>
+
+  <div class="back">
+    <a href="index.html">⬅ Назад к неделе</a>
+  </div>
 
 </div>
+
 <script src="./print.js"></script>
+
 </body>
 </html>
