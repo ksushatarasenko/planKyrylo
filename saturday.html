@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Суббота — Приключения</title>
+  <link rel="stylesheet" href="styleponiedelnik.css">
+  <link rel="stylesheet" href="./print.css">
+  <link rel="stylesheet" href="./modal.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="day-header">
+    <div class="day-title">🧭 Суббота — День приключений</div>
+
+    <div class="day-subtitle">
+      Сегодня ты исследователь 🌍<br>
+      Открывай новое и получай удовольствие!
+    </div>
+  </div>
+
+  <div class="flex">
+    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
+  </div>
+
+  <div style="text-align:center; margin-bottom:10px;">
+    Имя: ____________ Дата: ____________
+  </div>
+
+  <!-- День -->
+
+  <div class="card morning" data-id="morning">
+    <div class="icon">🌙</div>
+    <div class="text">
+      <span class="time-badge">9:00–10:00</span>
+      Сон подольше — восстановись 😊
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card games" data-id="games">
+    <div class="icon">📱</div>
+    <div class="text">
+      <span class="time-badge">10:00–11:00</span>
+      1 час гаджетов — с контролем ⏳
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card study" data-id="study">
+    <div class="icon">🍳</div>
+    <div class="text">
+      <span class="time-badge">11:00–11:30</span>
+      Зарядка, завтрак, старт дня
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card family" data-id="family">
+    <div class="icon">🎲</div>
+    <div class="text">
+      <span class="time-badge">11:30–12:30</span>
+      Настольная игра с семьёй
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card food" data-id="food">
+    <div class="icon">🍲</div>
+    <div class="text">
+      <span class="time-badge">12:30–13:30</span>
+      Обед с семьёй
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card hobby" data-id="hobby">
+    <div class="icon">🎮</div>
+    <div class="text">
+      <span class="time-badge">13:30–15:00</span>
+      Игры / хобби — делай, что нравится
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card walk" data-id="walk">
+    <div class="icon">🌳</div>
+    <div class="text">
+      <span class="time-badge">15:00–16:30</span>
+      Прогулка + открытия — найди 5 интересных вещей
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card video" data-id="video">
+    <div class="icon">🎬</div>
+    <div class="text">
+      <span class="time-badge">16:30–17:00</span>
+      Познавательное видео
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card lego" data-id="lego">
+    <div class="icon">🧱</div>
+    <div class="text">
+      <span class="time-badge">17:00–18:00</span>
+      LEGO / проект / эксперимент
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card evning" data-id="evning">
+    <div class="icon">�</div>
+    <div class="text">
+      <span class="time-badge">18:00–19:00</span>
+      Ужин и отдых
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card study" data-id="ideas">
+    <div class="icon">📓</div>
+    <div class="text">
+      <span class="time-badge">19:00–20:00</span>
+      Дневник приключений
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <div class="card evning" data-id="evning">
+    <div class="icon">🌙</div>
+    <div class="text">
+      <span class="time-badge">20:00–22:00</span>
+      Спокойный вечер и сон
+    </div>
+    <div class="check"><input type="checkbox"></div>
+  </div>
+
+  <!-- Мотивация -->
+
+  <div class="motivation">
+    <h3>🌟 Сегодня ты:</h3>
+
+    <p>🌍 исследуешь мир</p>
+    <p>🎯 пробуешь новое</p>
+    <p>👨‍👩‍👦 проводишь время с семьёй</p>
+    <p>💡 находишь интересное вокруг</p>
+  </div>
+
+  <!-- Помни -->
+
+  <div class="cell">
+    <h2>🌟 Помни каждый день</h2>
+
+    <p class="p22">
+      Мир огромен и полон интересного 🌍<br>
+      Нужно только научиться замечать!
+    </p>
+
+    <p class="p22">
+      Самые интересные вещи — рядом с тобой 👀
+    </p>
+
+    <p class="p22">
+      Чем больше ты исследуешь — тем умнее становишься!
+    </p>
+  </div>
+
+  <!-- Будущее -->
+
+  <div class="cell">
+    <h2>🚀 Будущему исследователю</h2>
+
+    <p class="p22" style="text-align: left;">
+      Каждый день ты открываешь что-то новое.<br>
+      Это делает тебя умнее и интереснее.
+    </p>
+
+    <p class="p22" style="text-align: left;">
+      Подумай: что тебе нравится исследовать?<br>
+      Природу? Технику? Игры?
+    </p>
+
+    <p class="p22" style="text-align: left;">
+      Именно из интереса рождаются великие открытия 💡
+    </p>
+
+    <p class="p22" style="text-align: left;">
+      Не переставай задавать вопросы — это твоя суперсила 🚀
+    </p>
+  </div>
+
+  <!-- Диаграмма -->
+
+  <div class="cell">
+    <h2>📊 Мой день</h2>
+
+    <div style="text-align:center; margin: 10px 0;">
+      <div style="
+        width: 240px;
+        height: 240px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        margin: auto;
+      "></div>
+    </div>
+
+    <p>🟪 Сон &nbsp; 🟩 Семья &nbsp; 🟦 Гаджеты</p>
+    <p>🟨 Развитие &nbsp; 🟧 Хобби &nbsp; 🟥 Полезное</p>
+
+  </div>
+
+  <a href="index.html" class="back">⬅ Назад к неделе</a>
+
+</div>
+<!-- МОДАЛКА -->
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+    <p id="modal-text2"></p>
+    <p id="modal-text3"></p>
+  </div>
+</div>
+
+<script src="./print.js"></script>
+<script src="./modalSaturday.js"></script>
+
+</body>
+</html>
