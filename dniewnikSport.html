@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дневник спортсмена</title>
+<link rel="stylesheet" href="./print.css">
+
+<style>
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  width: 150px;
+}
+
+.block {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.write-area {
+  height: 60px;
+  border-bottom: 1px dashed #aaa;
+  margin-bottom: 6px;
+}
+
+.small {
+  height: 40px;
+}
+
+.big {
+  height: 80px;
+}
+
+.footer {
+  margin-top: 20px;
+  border: 2px dashed #999;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+
+  <h1>🥋 Дневник спортсмена</h1>
+
+  <div class="header">
+    Имя: <span class="line"></span>  
+    Дата: <span class="line"></span>
+  </div>
+
+  <!-- Блоки -->
+
+  <div class="block">
+    <div class="title">💪 Как прошла тренировка</div>
+    <div class="write-area"></div>
+    <div class="write-area"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">🔥 Что получилось лучше всего</div>
+    <div class="write-area"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">🤔 Что было сложно</div>
+    <div class="write-area"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">📈 В чём я стал сильнее сегодня</div>
+    <div class="write-area"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">🎯 Чему я научился</div>
+    <div class="write-area"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">🏆 Моя победа над собой</div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Вывод -->
+
+  <div class="footer">
+    <b>🚀 Мой вывод за день:</b>
+    <div class="write-area big"></div>
+  </div>
+
+  <!-- Оценка -->
+
+  <div class="block">
+    <div class="title">⭐ Оцени свой день (обведи)</div>
+    ⭐ ⭐ ⭐ ⭐ ⭐
+  </div>
+
+  <!-- Диаграмма -->
+
+  <div class="block">
+    <div class="title">📊 Мой день (закрась круг)</div>
+
+    <div style="text-align:center; margin: 10px 0;">
+      <div style="
+        width: 180px;
+        height: 180px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        margin: auto;
+      "></div>
+    </div>
+
+    <div>
+      😴 Сон &nbsp;&nbsp; 🏫 Школа &nbsp;&nbsp; 🎮 Гаджеты  
+      <br>
+      💪 Спорт &nbsp;&nbsp; 📚 Развитие &nbsp;&nbsp; ❤️ Полезное
+    </div>
+  </div>
+
+  <!-- Мотивация -->
+
+  <div class="footer">
+    <b>🔥 Помни:</b><br>
+    Сильные люди — это не те, кому легко,<br>
+    а те, кто не сдаются! 💥
+  </div>
+
+  <br>
+
+  <div class="back">
+    <a href="index.html">⬅ Назад к неделе</a>
+  </div>
+
+</div>
+
+<script src="./print.js"></script>
+
+</body>
+</html>

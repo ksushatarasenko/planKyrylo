@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дневник идей</title>
+<link rel="stylesheet" href="./print.css">
+  <link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  width: 150px;
+}
+
+.block {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.write-area {
+  height: 60px;
+  border-bottom: 1px dashed #aaa;
+  margin-bottom: 6px;
+}
+
+.small {
+  height: 40px;
+}
+
+.big {
+  height: 90px;
+}
+
+.footer {
+  margin-top: 20px;
+  border: 2px dashed #999;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <button class="print-btn" onclick="window.print()">
+    🖨️ Распечатать
+  </button>
+
+  <h1>🧠 Дневник идей</h1>
+
+  <div class="header">
+    Имя: <span class="line"></span>  
+    Дата: <span class="line"></span>
+  </div>
+
+  <!-- Основная идея -->
+
+  <div class="block">
+    <div class="title">💡 Моя идея сегодня</div>
+    <div class="write-area big"></div>
+  </div>
+
+  <!-- Что сделал -->
+
+  <div class="block">
+    <div class="title">🔧 Что я сделал (построил / попробовал)</div>
+    <div class="write-area"></div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Как это работает -->
+
+  <div class="block">
+    <div class="title">⚙️ Как это работает</div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Проблемы -->
+
+  <div class="block">
+    <div class="title">🤔 Что было сложно</div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Улучшение -->
+
+  <div class="block">
+    <div class="title">🚀 Как можно улучшить</div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Новые мысли -->
+
+  <div class="block">
+    <div class="title">🌱 Что нового я понял</div>
+    <div class="write-area"></div>
+  </div>
+
+  <!-- Рисунок -->
+
+  <div class="block">
+    <div class="title">✏️ Нарисуй свою идею</div>
+    <div style="height:120px; border:1px dashed #aaa;"></div>
+  </div>
+
+  <!-- Вывод -->
+
+  <div class="footer">
+    <b>🏆 Мой вывод:</b>
+    <div class="write-area big"></div>
+  </div>
+
+  <!-- Мотивация -->
+
+  <div class="footer">
+    <b>🔥 Помни:</b><br><br>
+    Любая большая идея начинается с маленькой.<br>
+    Ошибки — это часть успеха.<br>
+    Ты учишься думать, создавать и становиться лучше каждый день!
+  </div>
+
+  <br>
+
+  <div class="back">
+    <a href="index.html">⬅ Назад к неделе</a>
+  </div>
+
+</div>
+
+<script src="./print.js"></script>
+
+</body>
+</html>
