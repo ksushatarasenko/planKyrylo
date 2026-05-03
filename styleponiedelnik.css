@@ -99,6 +99,14 @@ p{
   font-size: 20px;
   color: rgb(60, 54, 54);
 }
+.cell .p22 {
+  font-size: 26px;
+  color: rgb(106, 2, 2);
+  font-style: italic;
+  width: 70%;
+  margin: 4px auto;
+  text-align: center;
+}
 .p22 {
   font-size: 26px;
   color: rgb(106, 2, 2);
@@ -187,6 +195,7 @@ p{
 .family { background: #f9ecc2; }
 .study { background: #cff5d3; }
 .good { background: #b2fffa; }
+.free { background: #f0c2ff; }
 
 /* Текст */
 .text {
