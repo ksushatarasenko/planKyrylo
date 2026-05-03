@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
@@ -9,6 +9,10 @@ h1 {
   text-align: center;
   padding: 20px;
   color: #333;
+}
+p{
+  font-size: 18px;
+  color: #555;
 }
 
 /* Контейнер */
@@ -173,17 +177,16 @@ h1 {
 
 /* Иконка */
 .icon {
-  font-size: 26px;
+  font-size: 30px;
 }
 
 /* Цветные типы карточек */
-.morning { background: #fff3cd; }
-.school { background: #d1ecf1; }
-.food { background: #d4edda; }
-.games { background: #f8d7da; }
-.walk { background: #e2f0cb; }
-.study { background: #e6ccff; }
-.good { background: #ffe0b2; }
+.morning { background: #aad5f2; }
+.school { background: #d1f1d1; }
+.games { background: #eabec2; }
+.family { background: #f9ecc2; }
+.study { background: #cff5d3; }
+.good { background: #b2fffa; }
 
 /* Текст */
 .text {
@@ -192,24 +195,32 @@ h1 {
 
 /* Галочка */
 .check {
-  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   cursor: pointer;
+  margin-right: 3%;
+}
+.check input{
+  width: 100%;
+  height: 100%;
 }
 
 .time-badge {
   background: #333;
   color: white;
-  padding: 4px 10px;
+  padding: 6px 10px;
   border-radius: 10px;
-  font-size: 12px;
-  margin-right: 10px;
+  font-size: 15px;
+  margin-right: 15px;
   white-space: nowrap;
 }
 
 .flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 10px;
+  margin-bottom: 100px;
 }
 
 /* table */
@@ -217,4 +228,52 @@ th, td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
+}
+
+/* плавающее окно */
+
+#floating-tip {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 16px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #ff4d4d, #ff0000);
+  color: white;
+  font-size: 24px;
+  font-style: italic;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+  opacity: 0;
+  transform: scale(0.8); /* 👈 старт чуть меньше */
+  
+  pointer-events: none;
+  z-index: 999999;
+
+  transition: 
+    opacity 0.5s ease,
+    transform 0.5s ease; /* 👈 плавный scale */
+}
+
+.tip-icon {
+  font-size: 36px;
+}
+
+/* ПОЯВЛЕНИЕ */
+#floating-tip.show {
+  opacity: 1;
+  transform: scale(1);
+
+  animation: floatMove 4s infinite ease-in-out;
+}
+
+/* ДВИЖЕНИЕ (БЕЗ translate(-50%)) */
+@keyframes floatMove {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translate(10px, -10px) scale(1); }
+  100% { transform: translate(0,0) scale(1); }
 }

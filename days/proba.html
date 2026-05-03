@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Понедельник — Наблюдатель</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #dbeafe, #fef3c7);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.day-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.day-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #6d28d9;
+}
+
+.day-subtitle {
+  background: #bfdbfe;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* GAME PANEL */
+.game-panel {
+  background: linear-gradient(135deg, #fde68a, #fca5a5);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progress {
+  background: #ddd;
+  height: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  transition: 0.4s;
+}
+
+.xp {
+  font-weight: bold;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card.done {
+  background: #dcfce7;
+  transform: scale(1.03);
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.text {
+  flex: 1;
+}
+
+.time {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* XP POPUP */
+#xp-popup {
+  position: fixed;
+  font-size: 20px;
+  color: green;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+/* WARNING */
+.warning {
+  background: #fee2e2;
+  padding: 15px;
+  border-left: 5px solid red;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* FINAL */
+.final {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* CONFETTI */
+.confetti {
+  position: fixed;
+  font-size: 20px;
+  top: -10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="day-header">
+    <div class="day-title">🕵️ Понедельник — Наблюдатель</div>
+    <div class="day-subtitle">Сегодня ты замечаешь больше, чем другие 👀</div>
+  </div>
+
+  <!-- GAME -->
+  <div class="game-panel">
+    <div class="xp">⭐ Опыт: <span id="xp">0</span></div>
+
+    <div class="progress">
+      <div id="progress-bar"></div>
+    </div>
+
+    <div>🎯 Найди 3 новые вещи вокруг себя</div>
+  </div>
+
+  <!-- TASKS -->
+
+  <div class="card">
+    <div class="icon">☀️</div>
+    <div class="text"><span class="time">7:00</span> Подъём и зарядка</div>
+    <input type="checkbox">
+  </div>
+
+  <div class="card">
+    <div class="icon">🏫</div>
+    <div class="text"><span class="time">9:00–13:00</span> Школа — прокачка мозга</div>
+    <input type="checkbox">
+  </div>
+
+  <div class="card">
+    <div class="icon">🌳</div>
+    <div class="text"><span class="time">16:00</span> Прогулка — найди 3 интересные вещи</div>
+    <input type="checkbox">
+  </div>
+
+  <div class="card">
+    <div class="icon">📓</div>
+    <div class="text"><span class="time">17:00</span> Запиши свои наблюдения</div>
+    <input type="checkbox">
+  </div>
+
+  <div class="card">
+    <div class="icon">❤️</div>
+    <div class="text"><span class="time">19:00</span> Сделай доброе дело</div>
+    <input type="checkbox">
+  </div>
+
+  <div class="card">
+    <div class="icon">📚</div>
+    <div class="text"><span class="time">19:30</span> Уроки — быстро и чётко</div>
+    <input type="checkbox">
+  </div>
+
+  <!-- WARNING -->
+  <div class="warning">
+    📱 Гаджеты:
+    <p>Экран даёт удовольствие, но забирает время ⏳</p>
+    <p><b>Ты управляешь временем — значит ты сильнее 💪</b></p>
+  </div>
+
+  <!-- FINAL -->
+  <div class="final" id="final">
+    Сделай первый шаг 🚀
+  </div>
+
+</div>
+
+<div id="xp-popup"></div>
+
+<script>
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const bar = document.getElementById("progress-bar");
+const xpText = document.getElementById("xp");
+const final = document.getElementById("final");
+
+let xp = 0;
+
+checkboxes.forEach(cb => {
+  cb.addEventListener("change", (e) => {
+
+    const card = cb.closest('.card');
+
+    if (cb.checked) {
+      card.classList.add("done");
+      showXP(e.clientX, e.clientY);
+    } else {
+      card.classList.remove("done");
+    }
+
+    update();
+  });
+});
+
+function update() {
+  const total = checkboxes.length;
+  const done = [...checkboxes].filter(c => c.checked).length;
+
+  let percent = (done / total) * 100;
+  bar.style.width = percent + "%";
+
+  xp = done * 10;
+  xpText.innerText = xp;
+
+  if (percent < 30) final.innerText = "🙂 Начало есть!";
+  else if (percent < 70) final.innerText = "💪 Уже круто!";
+  else if (percent < 100) final.innerText = "🔥 Почти максимум!";
+  else {
+    final.innerText = "🏆 ИДЕАЛЬНЫЙ ДЕНЬ!";
+    celebrate();
+  }
+}
+
+function showXP(x, y) {
+  const el = document.getElementById("xp-popup");
+
+  el.style.left = x + "px";
+  el.style.top = y + "px";
+  el.innerText = "+10 XP";
+
+  el.style.opacity = 1;
+  el.style.transform = "translateY(-20px)";
+
+  setTimeout(() => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(0)";
+  }, 500);
+}
+
+function celebrate() {
+  for (let i = 0; i < 40; i++) {
+    let conf = document.createElement("div");
+    conf.innerText = "🎉";
+    conf.className = "confetti";
+    conf.style.left = Math.random() * window.innerWidth + "px";
+
+    document.body.appendChild(conf);
+
+    let fall = setInterval(() => {
+      conf.style.top = (conf.offsetTop + 5) + "px";
+      if (conf.offsetTop > window.innerHeight) {
+        clearInterval(fall);
+        conf.remove();
+      }
+    }, 30);
+  }
+}
+
+</script>
+
+</body>
+</html>
