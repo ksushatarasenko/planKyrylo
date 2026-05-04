@@ -127,3 +127,82 @@ close.onclick = () => (modal.style.display = "none");
 window.onclick = (e) => {
   if (e.target == modal) modal.style.display = "none";
 };
+
+// Плавающая подсказка при наведении на карточку
+document.addEventListener("DOMContentLoaded", () => {
+
+ const tips = [
+  { icon: "💪", text: "Четверг — день силы. Тренируй тело и характер" },
+  { icon: "🔥", text: "Движение сегодня — энергия на завтра" },
+  { icon: "🏃‍♂️", text: "Не сиди — двигайся, даже немного" },
+  { icon: "⚡", text: "Активность заряжает лучше любого отдыха" },
+  { icon: "🥇", text: "Каждая тренировка делает тебя сильнее" },
+  { icon: "🧠", text: "Сильное тело помогает сильному уму" },
+  { icon: "🎯", text: "Преодолей себя — это главная победа" },
+  { icon: "🏋️", text: "Сегодня ты строишь своё здоровье" },
+  { icon: "😤", text: "Устал? Значит тренировка работает" },
+  { icon: "📈", text: "Стань лучше, чем был вчера — физически и морально" },
+  { icon: "🛠️", text: "Дисциплина в спорте = дисциплина в жизни" },
+  { icon: "🚀", text: "Разгоняй энергию — не тормози" },
+  { icon: "🌟", text: "Сильный день — сильное будущее" },
+  { icon: "⏳", text: "Не откладывай движение — начни сейчас" },
+  { icon: "🏆", text: "Побеждает тот, кто не пропускает тренировки" }
+];
+
+  const colors = [
+  "linear-gradient(135deg, #ff4d4d, #f53434)", // красный
+  "linear-gradient(135deg, #ff9a00, #ff5e00)", // оранжевый
+  "linear-gradient(135deg, #00c853, #00ff88)", // зелёный
+  "linear-gradient(135deg, #2979ff, #00c6ff)", // синий
+  "linear-gradient(135deg, #8820b5, #e040fb)", // фиолетовый
+  "linear-gradient(135deg, #ff4081, #ff80ab)", // розовый
+  "linear-gradient(135deg, #ffcc00, #ff9800)"  // жёлтый
+];
+
+  const el = document.getElementById("floating-tip");
+  if (!el) return;
+
+  const textEl = el.querySelector(".tip-text");
+  const iconEl = el.querySelector(".tip-icon");
+  if (!textEl || !iconEl) return;
+
+  function randomPosition() {
+  const margin = 20;
+
+  const maxX = window.innerWidth - el.offsetWidth - margin;
+  const maxY = window.innerHeight - el.offsetHeight - margin;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  el.style.left = x + "px";
+  el.style.top = y + "px";
+}
+
+  function showTip() {
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+
+    textEl.innerText = tip.text;
+    iconEl.innerText = tip.icon;
+
+    // 🔥 смена цвета
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  el.style.background = color;
+
+    randomPosition();
+
+    el.classList.add("show");
+
+    const lifeTime = 10000; // 10 секунд
+
+    setTimeout(() => {
+      el.classList.remove("show");
+    }, lifeTime);
+
+    setTimeout(showTip, lifeTime + 5000);
+  }
+
+  // запуск
+  setTimeout(showTip, 3000);
+
+});

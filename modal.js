@@ -1,9 +1,9 @@
 const data = {
   morning: {
     title: "Подъём",
-    text: "Проснись, сделай зарядку, заправь кровать. \n Это даёт энергию на весь день.",
-    text2: "Постарайся проснуться в одно и то же время, даже в выходные. Это поможет тебе чувствовать себя лучше.",
-    text3: "Как начнешь утро, так проведешь день. \n Начни с хорошего настроения и полезных привычек!"
+    text: "Проснись! Да-да, именно ты 😄 \n Потянись, сделай зарядку и покажи понедельнику, кто тут главный!",
+    text2: "Если встать сразу — день пойдёт легче. Если нет… подушка победит 😴",
+    text3: "Начни день как чемпион: просто оторвись от подушки!"
   },
   school: {
     title: "Школа",
@@ -90,3 +90,82 @@ close.onclick = () => modal.style.display = 'none';
 window.onclick = (e) => {
   if (e.target == modal) modal.style.display = 'none';
 };
+
+// Плавающая подсказка при наведении на карточку
+document.addEventListener("DOMContentLoaded", () => {
+
+  const tips = [
+  { icon: "🚀", text: "Понедельник — это старт новой недели. Начни уверенно!" },
+  { icon: "🎯", text: "Сегодня выбери 1 цель и сделай шаг к ней" },
+  { icon: "💪", text: "Начало — самое сложное. Дальше будет легче!" },
+  { icon: "⚡", text: "Сделай что-то полезное с утра — и день уже удался" },
+  { icon: "🧠", text: "Новый день = новый шанс стать умнее" },
+  { icon: "🔥", text: "Не жди настроения — начни, и оно появится" },
+  { icon: "⏳", text: "Твоё время начинается сейчас. Не откладывай" },
+  { icon: "😄", text: "Улыбнись — ты уже проснулся, это победа!" },
+  { icon: "📈", text: "Маленький шаг сегодня = большой результат потом" },
+  { icon: "🏆", text: "Сильные начинают, даже когда не хочется" },
+  { icon: "🎮", text: "Неделя началась — первый уровень открыт!" },
+  { icon: "🌟", text: "Сделай этот день чуть лучше, чем вчера" },
+  { icon: "🛠️", text: "Ты строишь свою неделю своими действиями" },
+  { icon: "💡", text: "Попробуй сегодня что-то новое — мозг скажет спасибо" },
+  { icon: "🚶‍♂️", text: "Просто начни. Даже маленькое действие считается" }
+];
+
+  const colors = [
+  "linear-gradient(135deg, #ff4d4d, #f53434)", // красный
+  "linear-gradient(135deg, #ff9a00, #ff5e00)", // оранжевый
+  "linear-gradient(135deg, #00c853, #00ff88)", // зелёный
+  "linear-gradient(135deg, #2979ff, #00c6ff)", // синий
+  "linear-gradient(135deg, #8820b5, #e040fb)", // фиолетовый
+  "linear-gradient(135deg, #ff4081, #ff80ab)", // розовый
+  "linear-gradient(135deg, #ffcc00, #ff9800)"  // жёлтый
+];
+
+  const el = document.getElementById("floating-tip");
+  if (!el) return;
+
+  const textEl = el.querySelector(".tip-text");
+  const iconEl = el.querySelector(".tip-icon");
+  if (!textEl || !iconEl) return;
+
+  function randomPosition() {
+  const margin = 20;
+
+  const maxX = window.innerWidth - el.offsetWidth - margin;
+  const maxY = window.innerHeight - el.offsetHeight - margin;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  el.style.left = x + "px";
+  el.style.top = y + "px";
+}
+
+  function showTip() {
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+
+    textEl.innerText = tip.text;
+    iconEl.innerText = tip.icon;
+
+    // 🔥 смена цвета
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  el.style.background = color;
+
+    randomPosition();
+
+    el.classList.add("show");
+
+    const lifeTime = 10000; // 10 секунд
+
+    setTimeout(() => {
+      el.classList.remove("show");
+    }, lifeTime);
+
+    setTimeout(showTip, lifeTime + 5000);
+  }
+
+  // запуск
+  setTimeout(showTip, 3000);
+
+});

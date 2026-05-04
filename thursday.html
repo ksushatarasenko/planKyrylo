@@ -22,10 +22,7 @@
       </div>
     </div>
 
-    <div class="flex">
-      <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
-      <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
-    </div>
+    
 
     <div style="text-align:center; margin-bottom:10px;">
       Имя: ____________ Дата: ____________
@@ -87,16 +84,7 @@
       <div class="check"><input type="checkbox"></div>
     </div>
 
-    <div class="card sport" data-id="sport">
-      <div class="icon">🥋</div>
-      <div class="text">
-        <span class="time-badge">17:00–18:30</span>
-        Карате — тренировка тела и духа
-      </div>
-      <div class="check"><input type="checkbox"></div>
-    </div>
-
-    <div class="card sportDom" data-id="sportDom">
+    <div class="card study" data-id="sportDom">
       <div class="icon">💪</div>
       <div class="text">
         <span class="time-badge">18:30–19:00</span>
@@ -132,7 +120,7 @@
       <div class="check"><input type="checkbox"></div>
     </div>
 
-    <div class="card lesson" data-id="lesson">
+    <div class="card school" data-id="lesson">
       <div class="icon">📚</div>
       <div class="text">
         <span class="time-badge">20:00–20:30</span>
@@ -141,7 +129,7 @@
       <div class="check"><input type="checkbox"></div>
     </div>
 
-    <div class="card video" data-id="video">
+    <div class="card free" data-id="video">
       <div class="icon">🎬</div>
       <div class="text">
         <span class="time-badge">20:30–21:00</span>
@@ -150,7 +138,7 @@
       <div class="check"><input type="checkbox"></div>
     </div>
 
-    <div class="card evning" data-id="evning">
+    <div class="card morning" data-id="evning">
       <div class="icon">🌙</div>
       <div class="text">
         <span class="time-badge">21:00–22:00</span>
@@ -187,7 +175,7 @@
     <div class="cell">
       <h2>💪 Помни каждый день</h2>
 
-      <p class="p22">
+      <p class="p22" style="color: rgb(0, 64, 255);">
         Сила — это не только мышцы, но и характер! 🔥<br>
         Ты становишься сильнее каждый раз, когда не сдаёшься.
       </p>
@@ -197,7 +185,7 @@
         Именно так рождаются победители 🏆
       </p>
 
-      <p class="p22">
+      <p class="p22" style="color: rgb(0, 165, 0);">
         Ты не соревнуешься с другими —<br>
         ты становишься лучше себя вчерашнего.
       </p>
@@ -211,7 +199,7 @@
         Маленькие усилия сегодня — большие победы завтра.
       </p>
 
-      <p class="p22" style="text-align: left;">
+      <p class="p22" style="text-align: left;color: rgb(0, 64, 255);">
         Подумай: каким ты хочешь быть?<br>
         Сильным? Уверенным? Дисциплинированным?
       </p>
@@ -221,7 +209,7 @@
         Они просто не останавливаются 💥
       </p>
 
-      <p class="p22" style="text-align: left;">
+      <p class="p22" style="text-align: left;color: rgb(24, 181, 0);">
         Ты уже на этом пути. Продолжай двигаться! 🚀
       </p>
     </div>
@@ -241,7 +229,7 @@
       </div>
 
       <div>
-        <p> 🟪 Сон &nbsp;&nbsp; 🟩 Школа &nbsp;&nbsp; 🟦 Гаджеты</p>
+        <p> 🟪 Сон &nbsp;&nbsp; 🟩 Школа &nbsp;&nbsp; 🟦 Гаджеты &nbsp; <span style="display:inline-block;width:20px;height:20px;background:#38BDF8;"></span> Свободное время</p>
 
         <p>🟧 Спорт &nbsp;&nbsp; 🟨 Развитие &nbsp;&nbsp; 🟥 Полезное</p>
       </div>
@@ -305,6 +293,14 @@
               <td></td>
               <td></td>
             </tr>
+            <tr>
+              <td>🥳 Свободное время</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
 
             <tr style="background:#f9f9f9;">
               <td><b>ИТОГО</b></td>
@@ -321,6 +317,10 @@
     <a href="index.html" class="back">⬅ Назад к неделе</a>
 
   </div>
+  <div class="flex">
+      <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+      <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
+    </div>
 
   <!-- МОДАЛКА -->
 
@@ -332,6 +332,11 @@
       <p id="modal-text2"></p>
       <p id="modal-text3"></p>
     </div>
+  </div>
+  <!-- окно плавающее -->
+  <div id="floating-tip">
+    <span class="tip-icon"></span>
+    <span class="tip-text"></span>
   </div>
 
   <script src="./print.js"></script>

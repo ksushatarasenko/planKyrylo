@@ -1,7 +1,7 @@
 const data = {
   morning: {
     title: "Подъём",
-    text: "Умылся холодной водой, сделай зарядку, заправь кровать. \n Это даёт энергию на весь день.",
+    text: "Подъём! Твоё тело уже готово, \n осталось только включить тебя 🧠⚡",
     text2:
       "Постарайся проснуться в одно и то же время, даже в выходные. Это поможет тебе чувствовать себя лучше.",
     text3:
@@ -10,9 +10,8 @@ const data = {
   school: {
     title: "Школа",
     text: "Каждый урок — это новый уровень!  \n Помни, что знания — это сила, \n а школа — это твой тренировочный лагерь \n для будущих приключений!",
-    text2:
-      "Знания сегодня - уверенность в завтрашнем дне! \n Учиться - значит расти и развиваться!",
-    text3: "В ШКОЛЕ ТЫ НЕ ТОЛЬКО УЧИШЬСЯ - \n ТЫ РАСТЕШЬ!",
+    text2: "Каждое выполненное задание — это +1 к силе твоего характера ⚡ \n Учиться - значит расти и развиваться!",
+    text3: "В ШКОЛЕ ТЫ НЕ ТОЛЬКО УЧИШЬСЯ - \n ТЫ РАСТЕШЬ! Сильные не те, кто всё умеют, а те, кто не сдаются 😏",
   },
   food: {
     title: "Питание",
@@ -125,3 +124,82 @@ close.onclick = () => (modal.style.display = "none");
 window.onclick = (e) => {
   if (e.target == modal) modal.style.display = "none";
 };
+
+// Плавающая подсказка при наведении на карточку
+document.addEventListener("DOMContentLoaded", () => {
+
+ const tips = [
+  { icon: "💪", text: "Вторник — день силы. Покажи, на что ты способен" },
+  { icon: "🔥", text: "Дисциплина сегодня важнее настроения" },
+  { icon: "🎯", text: "Закрепи вчерашний старт — не сбавляй темп" },
+  { icon: "⚡", text: "Сильный день начинается с сильного решения" },
+  { icon: "🧠", text: "Тренируй не только тело, но и мышление" },
+  { icon: "🏋️", text: "Стань лучше, чем был вчера — даже на 1%" },
+  { icon: "🚀", text: "Сегодня ты разгоняешь свою неделю" },
+  { icon: "⏳", text: "Не тяни время — действуй уверенно и спокойно" },
+  { icon: "😤", text: "Сложно? Значит ты растёшь" },
+  { icon: "📈", text: "Повторение + дисциплина = результат" },
+  { icon: "🛠️", text: "Сегодня строится твоя сила характера" },
+  { icon: "🥇", text: "Побеждают не быстрые, а стабильные" },
+  { icon: "🔒", text: "Дисциплина — это обещание себе. Держи его" },
+  { icon: "🚶‍♂️", text: "Иди вперёд, даже если шаг маленький" },
+  { icon: "🌟", text: "Сильный вторник — сильная неделя" }
+];
+
+  const colors = [
+  "linear-gradient(135deg, #ff4d4d, #f53434)", // красный
+  "linear-gradient(135deg, #ff9a00, #ff5e00)", // оранжевый
+  "linear-gradient(135deg, #00c853, #00ff88)", // зелёный
+  "linear-gradient(135deg, #2979ff, #00c6ff)", // синий
+  "linear-gradient(135deg, #8820b5, #e040fb)", // фиолетовый
+  "linear-gradient(135deg, #ff4081, #ff80ab)", // розовый
+  "linear-gradient(135deg, #ffcc00, #ff9800)"  // жёлтый
+];
+
+  const el = document.getElementById("floating-tip");
+  if (!el) return;
+
+  const textEl = el.querySelector(".tip-text");
+  const iconEl = el.querySelector(".tip-icon");
+  if (!textEl || !iconEl) return;
+
+  function randomPosition() {
+  const margin = 20;
+
+  const maxX = window.innerWidth - el.offsetWidth - margin;
+  const maxY = window.innerHeight - el.offsetHeight - margin;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  el.style.left = x + "px";
+  el.style.top = y + "px";
+}
+
+  function showTip() {
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+
+    textEl.innerText = tip.text;
+    iconEl.innerText = tip.icon;
+
+    // 🔥 смена цвета
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  el.style.background = color;
+
+    randomPosition();
+
+    el.classList.add("show");
+
+    const lifeTime = 10000; // 10 секунд
+
+    setTimeout(() => {
+      el.classList.remove("show");
+    }, lifeTime);
+
+    setTimeout(showTip, lifeTime + 5000);
+  }
+
+  // запуск
+  setTimeout(showTip, 3000);
+
+});

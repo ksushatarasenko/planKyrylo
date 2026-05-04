@@ -22,10 +22,7 @@
     </div>
   </div>
 
-  <div class="flex">
-    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
-    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
-  </div>
+  
 
   <div style="text-align:center; margin-bottom:10px;">
     Имя: ____________ Дата: ____________
@@ -46,21 +43,13 @@
     <div class="icon">🏃‍♂️</div>
     <div class="text">
       <span class="time-badge">7:30–8:00</span>
-      Зарядка, завтрак
+      Зарядка, завтрак, подготовка к школе
     </div>
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card study" data-id="schoolPrep">
-    <div class="icon">🎒</div>
-    <div class="text">
-      <span class="time-badge">8:00–8:30</span>
-      Подготовка к школе
-    </div>
-    <div class="check"><input type="checkbox"></div>
-  </div>
 
-  <div class="card study" data-id="school">
+  <div class="card school" data-id="school">
     <div class="icon">🏫</div>
     <div class="text">
       <span class="time-badge">8:30–14:00</span>
@@ -91,16 +80,7 @@
     <div class="icon">🧪</div>
     <div class="text">
       <span class="time-badge">16:00–17:00</span>
-      Научный эксперимент
-    </div>
-    <div class="check"><input type="checkbox"></div>
-  </div>
-
-  <div class="card study" data-id="learn">
-    <div class="icon">📚</div>
-    <div class="text">
-      <span class="time-badge">17:00–18:00</span>
-      Изучай интересное
+      Научный эксперимент. Изучай интересное
     </div>
     <div class="check"><input type="checkbox"></div>
   </div>
@@ -114,7 +94,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card study" data-id="good">
+  <div class="card good" data-id="good">
     <div class="icon">❤️</div>
     <div class="text">
       <span class="time-badge">18:30–19:00</span>
@@ -141,7 +121,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card evning" data-id="evening">
+  <div class="card morning" data-id="evening">
     <div class="icon">🌙</div>
     <div class="text">
       <span class="time-badge">20:00–22:00</span>
@@ -211,7 +191,7 @@
     Ты тоже можешь стать исследователем:
   </p>
 
-  <ul style="text-align:left;">
+  <ul style="text-align:left;font-size: 20px;margin-left: 35%;">
     <li>🔬 наблюдай</li>
     <li>🧠 думай</li>
     <li>✍ записывай</li>
@@ -241,7 +221,7 @@
     "></div>
   </div>
 
-  <p>🟪 Сон &nbsp; 🟩 Школа &nbsp; 🟦 Гаджеты</p>
+  <p>🟪 Сон &nbsp; 🟩 Школа &nbsp; 🟦 Гаджеты &nbsp; <span style="display:inline-block;width:20px;height:20px;background:#38BDF8;"></span> Свободное время</p>
   <p>🟨 Учёба &nbsp; 🟧 Эксперименты &nbsp; 🟥 Добрые дела</p>
 
   <div class="block">
@@ -261,6 +241,13 @@
       <tr><td>📱 Гаджеты</td><td></td><td></td><td></td><td></td></tr>
       <tr><td>🧪 Наука</td><td></td><td></td><td></td><td></td></tr>
       <tr><td>❤️ Добрые дела</td><td></td><td></td><td></td><td></td></tr>
+      <tr>
+              <td>🥳 Свободное время</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
 
       <tr style="background:#f9f9f9;">
         <td><b>ИТОГО</b></td>
@@ -273,7 +260,7 @@
   </div>
 
   <p>💡 Подумай:</p>
-  <ul style="text-align:left;">
+  <ul style="text-align:left;font-size: 20px;margin-left: 20%;">
     <li>Где ушло слишком много времени?</li>
     <li>Что было самым полезным?</li>
     <li>Что хочешь изменить завтра?</li>
@@ -287,6 +274,10 @@
   <a href="index.html" class="back">⬅ Назад к неделе</a>
 
 </div>
+<div class="flex">
+    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
+  </div>
 
 <!-- МОДАЛКА -->
 
@@ -299,6 +290,12 @@
     <p id="modal-text3"></p>
   </div>
 </div>
+
+<!-- окно плавающее -->
+  <div id="floating-tip">
+    <span class="tip-icon"></span>
+    <span class="tip-text"></span>
+  </div>
 
 <script src="./print.js"></script>
 <script src="./modalFriday.js"></script>

@@ -23,11 +23,6 @@
     </div>
   </div>
 
-  <div class="flex">
-    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
-    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
-  </div>
-
   <div style="text-align:center; margin-bottom:10px;">
     Имя: ____________ Дата: ____________
   </div>
@@ -70,7 +65,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card lego" data-id="lego">
+  <div class="card study" data-id="lego">
     <div class="icon">🧱</div>
     <div class="text">
       <span class="time-badge">16:00–17:30</span>
@@ -80,7 +75,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card ideas" data-id="ideas">
+  <div class="card study" data-id="ideas">
     <div class="icon">💡</div>
     <div class="text">
       <span class="time-badge">17:30–18:00</span>
@@ -108,7 +103,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card lesson" data-id="lesson">
+  <div class="card school" data-id="lesson">
     <div class="icon">📚</div>
     <div class="text">
       <span class="time-badge">19:30–20:00</span>
@@ -117,7 +112,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card video" data-id="video">
+  <div class="card free" data-id="video">
     <div class="icon">🎬</div>
     <div class="text">
       <span class="time-badge">20:00–21:00</span>
@@ -126,7 +121,7 @@
     <div class="check"><input type="checkbox"></div>
   </div>
 
-  <div class="card evning" data-id="evning">
+  <div class="card morning" data-id="evning">
     <div class="icon">🌙</div>
     <div class="text">
       <span class="time-badge">21:00–22:00</span>
@@ -171,12 +166,119 @@
   </div>
   <div class="cell">
     <h2>Подумай о своем будущем!!</h2>
-    <p class="p22" style="text-align: left;">Мир огромен и полон возможностей. Каждый день ты узнаешь что-то новое и становишься ближе к своей мечте.</p>
+    <p class="p22" style="text-align: left;color: rgb(0, 157, 255);">Мир огромен и полон возможностей. Каждый день ты узнаешь что-то новое и становишься ближе к своей мечте.</p>
     <p class="p22" style="text-align: left;">Подумай, кем ты хочешь стать. Что тебе действительно интересно? Человек, который занимаеться любимым делом, всегда достигает успеха. 🏆</p>
   </div>
+  <!-- Диаграмма -->
+
+    <div class="cell">
+      <h2>⏳ Куда уходит твое время? ⏰</h2>
+
+      <div style="text-align:center; margin: 10px 0;">
+        <div style="
+        width: 240px;
+        height: 240px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        margin: auto;
+      "></div>
+      </div>
+
+      <p>🟪 Сон &nbsp; 🟩 Семья &nbsp; 🟦 Гаджеты &nbsp; <span style="display:inline-block;width:20px;height:20px;background:#38BDF8;"></span> Свободное время</p>
+      <p style="display: flex;align-items: center;gap: 3px;width: 300px;margin: 0 auto;"></p>
+      <p>🟨 Развитие &nbsp; 🟧 Исследование &nbsp; 🟥 Полезное</p>
+
+      <div class="block">
+        <h4>📊 Посчитай свой день</h4>
+
+        <table style="width:100%; border-collapse: collapse; text-align:center;">
+          <tr style="background:#f0f0f0;">
+            <th>Категория</th>
+            <th>Часы</th>
+            <th>Минуты</th>
+            <th>Всего (мин)</th>
+            <th>%</th>
+          </tr>
+
+          <tr>
+            <td>😴 Сон</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>🧑‍🧑‍🧒 Семья</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>🎮 Гаджеты</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>🌿 Исследование</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>📚 Развитие</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>❤️ Полезное / помощь</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+              <td>🥳 Свободное время</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+
+          <tr style="background:#f9f9f9;">
+            <td><b>ИТОГО</b></td>
+            <td></td>
+            <td></td>
+            <td><b>1440</b></td>
+            <td><b>100%</b></td>
+          </tr>
+        </table>
+      </div>
+      <p>Посмотри и проанализируй куда ты потратил свое время!</p>
+      <p>Подумай, что ты можешь изменить, чтобы больше времени уделять тому, что тебе нравится и что развивает тебя!</p>
+      <p class="p22" style="color: red;font-size: 22px;">
+        Помни, что время — самый ценный ресурс. Используй его с умом! ⏳
+      </p>
+
+    </div>
 
   <a href="index.html" class="back">⬅ Назад к неделе</a>
 
+   <div class="flex">
+    <button class="print-btn" onclick="window.print()">🖨️ Распечатать</button>
+    <button class="print-btn" onclick="printClean()">🧾 PDF версия</button>
+  </div>
 </div>
 
 <!-- МОДАЛКА -->
@@ -190,6 +292,11 @@
     <p id="modal-text3"></p>
   </div>
 </div>
+<!-- окно плавающее -->
+  <div id="floating-tip">
+    <span class="tip-icon"></span>
+    <span class="tip-text"></span>
+  </div>
 
 <script src="./print.js"></script>
 <script src="./modalWednesday.js"></script>
